@@ -1,0 +1,16 @@
+[project]
+name = "gexis-airplay"
+version = "0.1.0"
+description = "AirPlay 2 as a Gexis Player plugin"
+requires-python = ">=3.11"
+# **No runtime dependencies**, as gexis-plexamp: an appliance's plugin that
+# needs a virtualenv breaks on an upgrade nobody watched. Pillow, which a
+# Gexis player has (python3-pil), is used when it is there (cover.py).
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest==8.3.4", "pytest-asyncio==0.25.2"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["src"]

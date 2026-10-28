@@ -1,0 +1,10 @@
+{
+  "id": "airplay",
+  "name": "AirPlay",
+  "summary": "Plays from an iPhone, iPad or Mac: the player is in their AirPlay list, under its own name.",
+  "kind": "renderer",
+  "unit": "gexis-shairport-sync.service",
+  "label": "AirPlay Active",
+  "accent": "#b9c4ce",
+  "status": "Listening"
+}

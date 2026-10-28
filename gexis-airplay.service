@@ -1,0 +1,29 @@
+[Unit]
+Description=AirPlay as a Gexis plugin
+Documentation=https://github.com/gcarstoiu/gexis-airplay
+# **Bound to the receiver, not to the core** (as gexis-plexamp is to
+# Plexamp): the manifest names gexis-shairport-sync.service, the process that
+# opens the audio device, so the one switch in the Plugins category enables
+# that unit, and this one follows it.
+PartOf=gexis-shairport-sync.service
+After=gexis-core.service
+Before=gexis-shairport-sync.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -m gexis_airplay.main
+Environment=PYTHONPATH=/opt/gexis-airplay/src
+# The receiver's user, pi, as gexis-plexamp: the metadata pipe and the
+# hook's socket are in its runtime directory.
+User=pi
+RuntimeDirectory=gexis-airplay
+RuntimeDirectoryPreserve=yes
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=gexis-shairport-sync.service
