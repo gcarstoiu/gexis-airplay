@@ -2,6 +2,7 @@
   "id": "airplay",
   "name": "AirPlay",
   "summary": "Plays from an iPhone, iPad or Mac: the player is in their AirPlay list, under its own name.",
+  "tag": "Limited testing",
   "kind": "renderer",
   "unit": "gexis-shairport-sync.service",
   "label": "AirPlay Active",
